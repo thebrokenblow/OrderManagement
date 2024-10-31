@@ -7,12 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Hangfire" Version="1.8.15" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.20"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.20">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+      <ProjectReference Include="..\OrderManagement.Persistence\OrderManagement.Persistence.csproj" />
     </ItemGroup>
 
 </Project>
