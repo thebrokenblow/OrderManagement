@@ -30,7 +30,7 @@ public class OrderRepository : IOrderRepository
         await _context.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task UpdateStatusOrderAsync(int id, StatusOrder status, CancellationToken cancellationToken)
+    public async Task UpdateStatusByIdAsync(int id, StatusOrder status, CancellationToken cancellationToken)
     {
         var order = await GetByIdAsync(id, cancellationToken);
         
@@ -38,12 +38,22 @@ public class OrderRepository : IOrderRepository
         await _context.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task UpdateStatusAllOrderAsync(StatusOrder status)
+    public async Task UpdateStatusAsync(Order order, StatusOrder status, CancellationToken cancellationToken = default)
     {
-        foreach (var order in _context.Orders)
-        {
-            order.Status = status;
-            await _context.SaveChangesAsync();
-        }
+        order.Status = status;
+        await _context.SaveChangesAsync(cancellationToken);
     }
+
+    public async Task<List<Order>> GetOrdersAsync(CancellationToken cancellationToken) =>
+        await _context.Orders.ToListAsync(cancellationToken);
+
+    public async Task UpdateTotalAmountBaseCurrencyAsync(Order order, decimal totalAmountBaseCurrency,
+        CancellationToken cancellationToken = default)
+    {
+        order.TotalAmountInBaseCurrency = totalAmountBaseCurrency;
+        await _context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task<List<Order>> GetOrdersAsync() => 
+        await _context.Orders.ToListAsync();
 }

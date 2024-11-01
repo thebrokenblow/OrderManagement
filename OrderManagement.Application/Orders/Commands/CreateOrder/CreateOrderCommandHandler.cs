@@ -21,9 +21,13 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int
             Currency = request.Currency,
             Status = StatusOrder.Pending,
             Priority = request.Priority,
-            TotalAmountBaseCurrency = request.TotalAmountBaseCurrency,
-            
+            TotalAmountInBaseCurrency = null,
         };
+
+        if (request.Currency == CurrencyOrder.USD)
+        {
+            order.TotalAmountInBaseCurrency = request.TotalAmount;
+        }
         
         return _repository.AddAsync(order, cancellationToken);
     }

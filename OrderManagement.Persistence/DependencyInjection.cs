@@ -8,16 +8,15 @@ namespace OrderManagement.Persistence;
 
 public static class DependencyInjection
 {
-    private const string keyConnectionString = "DbConnection";
+    private const string KeyConnectionString = "DbConnection";
     
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration[keyConnectionString];
         services.AddDbContext<OrderManagementDbContext>(options =>
         {
-            options.UseNpgsql(connectionString);
+            options.UseNpgsql(configuration.GetConnectionString(KeyConnectionString));
         });
-
+        
         services.AddScoped<IOrderRepository, OrderRepository>();
 
         return services;

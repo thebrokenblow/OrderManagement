@@ -11,5 +11,5 @@ public class UpdateStatusOrderCommandHandler : IRequestHandler<UpdateStatusOrder
         _repository = repository;
     
     public async Task Handle(UpdateStatusOrderCommand request, CancellationToken cancellationToken) =>
-        await _repository.UpdateStatusOrderAsync(request.Id, request.Status, cancellationToken);
+        await _repository.UpdateStatusByIdAsync(request.Id, request.Status, cancellationToken);
 }
