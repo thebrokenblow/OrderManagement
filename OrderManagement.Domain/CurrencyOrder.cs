@@ -3,5 +3,8 @@
 public enum CurrencyOrder
 {
     USD,
-    EUR
+    EUR,
+    RUB,
+    CHF,
+    GBP
 }

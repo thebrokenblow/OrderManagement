@@ -9,7 +9,7 @@ public class Order
     public required CurrencyOrder Currency { get; set; }
     public required StatusOrder Status { get; set; }
     public required int Priority { get; set; }
-    public required decimal? TotalAmountInBaseCurrency { get; set; }
+    public decimal? TotalAmountInBaseCurrency { get; set; }
     
     public override string ToString() =>
         $"Id: {Id} :: CustomerName: {CustomerName} :: TotalAmount: {TotalAmount} :: TotalAmountInBaseCurrency: {TotalAmountInBaseCurrency}";

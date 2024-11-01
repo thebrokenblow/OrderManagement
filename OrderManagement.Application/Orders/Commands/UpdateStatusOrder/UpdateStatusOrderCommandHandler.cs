@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using OrderManagement.Application.Interfaces;
+using OrderManagement.Application.Common.Repositories.Interfaces;
 
 namespace OrderManagement.Application.Orders.Commands.UpdateStatusOrder;
 

@@ -7,6 +7,7 @@ public class AssemblyMappingProfile : Profile
 {
     public AssemblyMappingProfile(Assembly assembly) =>
         ApplyMappingsFromAssembly(assembly);
+    
     private void ApplyMappingsFromAssembly(Assembly assembly)
     {
         var types = assembly.GetExportedTypes()

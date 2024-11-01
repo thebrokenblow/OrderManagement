@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using OrderManagement.Application.Interfaces;
+using OrderManagement.Application.Common.Repositories.Interfaces;
 using OrderManagement.Domain;
 
 namespace OrderManagement.Application.Orders.Commands.CreateOrder;
@@ -20,8 +20,7 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int
             TotalAmount = request.TotalAmount,
             Currency = request.Currency,
             Status = StatusOrder.Pending,
-            Priority = request.Priority,
-            TotalAmountInBaseCurrency = null,
+            Priority = request.Priority
         };
 
         if (request.Currency == CurrencyOrder.USD)

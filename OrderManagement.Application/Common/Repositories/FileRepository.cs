@@ -1,5 +1,4 @@
-﻿using System.Text;
-using OrderManagement.Application.Interfaces;
+﻿using OrderManagement.Application.Common.Repositories.Interfaces;
 
 namespace OrderManagement.Application.Common.Repositories;
 

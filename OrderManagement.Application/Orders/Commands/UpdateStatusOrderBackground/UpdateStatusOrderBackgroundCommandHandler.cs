@@ -1,7 +1,7 @@
 ﻿using Hangfire;
 using MediatR;
+using OrderManagement.Application.Common.Repositories.Interfaces;
 using OrderManagement.Application.Common.Services.Interfaces;
-using OrderManagement.Application.Interfaces;
 using OrderManagement.Domain;
 
 namespace OrderManagement.Application.Orders.Commands.UpdateStatusOrderBackground;

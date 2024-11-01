@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrderManagement.Application.Common.Mappings;
 using OrderManagement.Application.Common.Repositories;
+using OrderManagement.Application.Common.Repositories.Interfaces;
 using OrderManagement.Application.Common.Services;
 using OrderManagement.Application.Common.Services.Interfaces;
-using OrderManagement.Application.Interfaces;
 
 namespace OrderManagement.Application;
 

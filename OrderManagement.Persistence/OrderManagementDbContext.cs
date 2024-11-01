@@ -6,7 +6,7 @@ namespace OrderManagement.Persistence;
 
 public class OrderManagementDbContext : DbContext
 {
-    public DbSet<Order> Orders { get; set; }
+    public DbSet<Order> Orders { get; init; }
     
     public OrderManagementDbContext(DbContextOptions<OrderManagementDbContext> options) : base(options) { }
 

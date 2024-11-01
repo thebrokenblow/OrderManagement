@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OrderManagement.Application.Interfaces;
+using OrderManagement.Application.Common.Repositories.Interfaces;
 using OrderManagement.Persistence.Repositories;
 
 namespace OrderManagement.Persistence;

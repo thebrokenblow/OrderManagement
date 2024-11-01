@@ -1,6 +1,6 @@
-﻿namespace OrderManagement.Application.Interfaces;
+﻿namespace OrderManagement.Application.Common.Repositories.Interfaces;
 
 public interface IFileRepository
 {
-    Task WriteAsync(string order, CancellationToken cancellationToken);
+    Task WriteAsync(string order, CancellationToken cancellationToken = default);
 }
